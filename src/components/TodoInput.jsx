@@ -11,6 +11,10 @@ const TodoInput = () => {
   // Function to handle form submission
   const handleSubmit = (e) => {
     e.preventDefault(); //Prevent default form submit behavior,page reload
+
+    //prevent adding empty or whitespace, only todos
+    if (!text.trim()) return;
+
     addTodo(text); //Call context's addTodo function to add a new todo
     setText(""); //Clear the input field after submission
   };
