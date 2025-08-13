@@ -1,16 +1,16 @@
-import React, { useContext } from "react";
-//import ThemeContext to access theme state and toggle function
-import { ThemeContext } from "./contexts/ThemeContext";
+import { useContext } from "react";
+import { ThemeContext } from "../contexts/ThemeContext";
 
 const ThemeToggleButton = () => {
-  //destructure theme and toggleTheme function from ThemeContext
   const { theme, toggleTheme } = useContext(ThemeContext);
 
   return (
-    //Button triggers toggleTheme to switch between light and dark themes
-    <button onClick={toggleTheme}>
-      {/* Display text based on current theme */}
-      {theme === "light" ? "Switch to Dark" : "Switch to Light"}
+    <button
+      onClick={toggleTheme}
+      className="px-4 py-2 rounded bg-gray-800 text-white 
+                 dark:bg-yellow-400 dark:text-black transition"
+    >
+      {theme === "light" ? "🌙 Switch to Dark" : "☀ Switch to Light"}
     </button>
   );
 };
