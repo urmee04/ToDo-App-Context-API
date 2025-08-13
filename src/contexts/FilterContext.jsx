@@ -5,7 +5,7 @@ const FilterContext = createContext();
 
 const FilterProvider = ({ children }) => {
   //local state to store the current filter type; default is 'all'
-  const [filter, setFilter] = useState("All");
+  const [filter, setFilter] = useState("all");
 
   // Handler function to update the filter state
   const setFilterHandler = (newFilter) => {
